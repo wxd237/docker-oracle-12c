@@ -2,6 +2,9 @@ FROM sath89/oracle-12c-base
 
 ### This image is a build from non automated image cause of no possibility of Oracle 12c instalation in Docker container
 
+CMD sed -i 's/archive.ubuntu/mirrors.aliyun/g' /etc/apt/sources.list && apt-get update && apt-get install build-essential
+
+
 ENV WEB_CONSOLE true
 ENV DBCA_TOTAL_MEMORY 2048
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/u01/app/oracle/product/12.1.0/xe/bin
